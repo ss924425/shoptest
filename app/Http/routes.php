@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
+<<<<<<< HEAD
     return view('welcome');
+=======
+    return view('login');
+>>>>>>> yys/master
 });
