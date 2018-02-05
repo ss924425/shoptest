@@ -17,11 +17,12 @@ class productController extends Controller
      */
     public function index()
     {
+         return view('home.product');
         $res = DB::table('data_goods')->get();
         // dd($res);
         // $res = Goods::list();
         return view('home.product',['res'=>$res]);
-        // dd($res);
+        dd($res);
     }
 
     /**
