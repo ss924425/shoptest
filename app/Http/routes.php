@@ -13,6 +13,7 @@
 
 // 前台
 Route::get('/','home\indexController@index');
+<<<<<<< HEAD
 
 Route::get('/login','home\loginController@index');
 
@@ -32,3 +33,17 @@ Route::get('/admin','admin\indexController@index');
 Route::get('/user','admin\userController@index');
 
 Route::get('/goods','admin\goodsController@index');
+=======
+Route::get('/login','home\loginController@index');
+Route::get('/detial','home\detialController@index');
+Route::get('/product','home\productController@index');
+Route::get('/cart','home\cartController@index');
+Route::get('/contact','home\contactController@index');
+Route::get('/register','home\registerController@index');
+
+// 后台
+Route::get('/admin', 'admin\indexController@index');
+
+// 商家
+Route::resource('/goods', 'seller\goodsController');
+>>>>>>> zyk

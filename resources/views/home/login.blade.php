@@ -14,11 +14,19 @@
             <form>
             <div class="col-md-6 login-do">
                 <div class="login-mail">
+<<<<<<< HEAD
                     <input type="text" placeholder="请输入用户名" required="" autofocus>
                     <i  class="glyphicon glyphicon-envelope"></i>
                 </div>
                 <div class="login-mail">
                     <input type="password" placeholder="请输入密码" required="">
+=======
+                    <input type="text" placeholder="请输入用户名" name='name' required="" autofocus>
+                    <i  class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="password" placeholder="请输入密码" name='pass' required="">
+>>>>>>> zyk
                     <i class="glyphicon glyphicon-lock"></i>
                 </div>
                 <center>

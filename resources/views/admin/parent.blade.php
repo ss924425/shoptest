@@ -14,6 +14,7 @@
   <meta name="apple-mobile-web-app-title" content="Amaze UI" />
   <link rel="stylesheet" href="{{ asset('admins/css/amazeui.min.css') }}"/>
   <link rel="stylesheet" href="{{ asset('admins/css/admin.css') }}">
+<<<<<<< HEAD
   <link rel="stylesheet" href="{{ asset('admins/css/bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admins/css/bootstrap.css') }}">
   <link rel="stylesheet" href="{{ asset('admins/css/bootstrap-theme.css') }}">
@@ -23,6 +24,8 @@
       margin:10px 0;
     }
   </style>
+=======
+>>>>>>> zyk
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -75,7 +78,10 @@
       <li><a href="admin-form.html"><span class="am-icon-pencil-square-o"></span> 表单</a></li>
       <li><a href="#"><span class="am-icon-sign-out"></span> 注销</a></li>
       <li><a href="{{url('user')}}"><span class="am-icon-sign-out"></span> 用户管理</a></li>
+<<<<<<< HEAD
       <li><a href="{{url('goods')}}"><span class="am-icon-sign-out"></span> 商品管理</a></li>
+=======
+>>>>>>> zyk
     </ul>
 
     <div class="am-panel am-panel-default admin-sidebar-panel">

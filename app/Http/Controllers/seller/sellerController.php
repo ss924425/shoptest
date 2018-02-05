@@ -1,18 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\home;
+namespace App\Http\Controllers\seller;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-<<<<<<< HEAD
-=======
-use DB;
-
->>>>>>> zyk
-class productController extends Controller
+class sellerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,25 +16,14 @@ class productController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-         return view('home.product');
-=======
-        $res = DB::table('data_goods')->get();
-        // dd($res);
-        // $res = Goods::list();
-        return view('home.product',['res'=>$res]);
->>>>>>> zyk
+        //
     }
 
     /**
      * Show the form for creating a new resource.
      *
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response
      */
-=======
-    */
->>>>>>> zyk
     public function create()
     {
         //

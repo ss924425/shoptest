@@ -14,6 +14,7 @@
                 <div class="col-md-3"></div>
             <div class="col-md-6 login-do">
             <div class="login-mail">
+<<<<<<< HEAD
                     <input type="text" placeholder="Name" required="" autofocus>
                     <i  class="glyphicon glyphicon-user"></i>
                 </div>
@@ -27,6 +28,21 @@
                 </div>
                 <div class="login-mail">
                     <input type="password" placeholder="Password" required="">
+=======
+                    <input type="text" placeholder="Name" name='name' required="" autofocus>
+                    <i  class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Phone Number" name='tel' required="">
+                    <i  class="glyphicon glyphicon-phone"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="text" placeholder="Email" name='email' required="">
+                    <i  class="glyphicon glyphicon-envelope"></i>
+                </div>
+                <div class="login-mail">
+                    <input type="password" placeholder="Password" name='password' required="">
+>>>>>>> zyk
                     <i class="glyphicon glyphicon-lock"></i>
                 </div>
                    <center>

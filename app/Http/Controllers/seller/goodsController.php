@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\home;
+namespace App\Http\Controllers\seller;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-<<<<<<< HEAD
-=======
 use DB;
 
->>>>>>> zyk
-class productController extends Controller
+class goodsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,28 +18,19 @@ class productController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-         return view('home.product');
-=======
-        $res = DB::table('data_goods')->get();
-        // dd($res);
-        // $res = Goods::list();
-        return view('home.product',['res'=>$res]);
->>>>>>> zyk
+        // dd(1111);
+        $list = DB::table('data_goods')->get();
+        return view('seller.index',['list' => $list]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-<<<<<<< HEAD
      * @return \Illuminate\Http\Response
      */
-=======
-    */
->>>>>>> zyk
     public function create()
     {
-        //
+        return view('seller.add');
     }
 
     /**
@@ -53,7 +41,22 @@ class productController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $arr = $request->except('_token');
+        $res = DB::table('data_goods')->insertGetId($arr);
+
+        $messages = [
+            'required' => ':attribute 是必须填写的'
+        ];
+
+        $this->validate($request, [
+            'goods_info' => 'required'
+        ], $messages);
+
+        if($res > 0){
+            return redirect('/goods/create')->with('msg','添加成功');
+        }else{
+            return redirect('/goods/create')->with('msg','添加失败');
+        }
     }
 
     /**
@@ -75,7 +78,7 @@ class productController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('seller.edit');
     }
 
     /**
