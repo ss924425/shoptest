@@ -30,3 +30,5 @@ Route::get('/register','home\registerController@index');
 Route::get('/admin','admin\indexController@index');
 
 Route::get('/user','admin\userController@index');
+
+Route::get('/goods','admin\goodsController@index');
