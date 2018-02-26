@@ -23,7 +23,7 @@
                 </div>
                 <center>
                     <label class="hvr-skew-backward" style="width:64px;height:38px;">
-                        <input type="submit" value="登录" >
+                        <input type="submit">
                     </label>
                     <a href="register.html" class=" hvr-skew-backward">注册</a>
             </div>

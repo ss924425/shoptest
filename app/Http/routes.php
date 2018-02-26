@@ -26,10 +26,24 @@ Route::get('/contact','home\contactController@index');
 
 Route::get('/register','home\registerController@index');
 
-// 后台
+Route::get('/center','home\centerController@index');
+
+// 平台
 Route::get('/admin','admin\indexController@index');
 
-Route::get('/user','admin\userController@index');
+Route::resource('/admin/users','admin\users\usersController');
+
+Route::resource('/admin/seller','admin\seller\sellerController');
+
+Route::get('/admin/users/center','admin\users\usersController@center');
 
 // 商家
-Route::resource('/goods', 'seller\goodsController');
+Route::get('/seller','seller\indexController@index');
+
+Route::resource('/seller/users','seller\users\usersController');
+
+Route::resource('/seller/goods','seller\goods\goodsController');
+
+Route::get('/seller/order','seller\orders\orderController@index');
+
+Route::get('/seller/orders/orderinfo','seller\orders\orderinfoController@index');

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class indexController extends Controller
 {
     /**
@@ -16,7 +16,8 @@ class indexController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $res = DB::table('data_goods')->get();
+        return view('home.index',['res'=>$res]);
     }
 
     /**
