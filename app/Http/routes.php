@@ -12,38 +12,40 @@
 */
 
 // 前台
-Route::get('/','home\indexController@index');
+Route::get('/','home\indexController@index'); // 首页
 
-Route::get('/login','home\loginController@index');
+Route::get('/login','home\loginController@index'); // 登录页
 
-Route::get('/detial','home\detialController@index');
+Route::get('/detial','home\detialController@index'); // 商品详情页
 
-Route::get('/product','home\productController@index');
+Route::get('/product','home\productController@index'); // 商品列表页
 
-Route::get('/cart','home\cartController@index');
+Route::get('/cart','home\cartController@index'); // 购物车页
 
-Route::get('/contact','home\contactController@index');
+Route::get('/contact','home\contactController@index'); // 商家入驻页
 
-Route::get('/register','home\registerController@index');
+Route::get('/register','home\registerController@index'); // 注册页
 
-Route::get('/center','home\centerController@index');
+Route::get('/center','home\centerController@index'); // 个人中心页
+
+Route::get('/pay','home\payController@index'); // 结算页
 
 // 平台
-Route::get('/admin','admin\indexController@index');
+Route::get('/admin','admin\indexController@index'); // 平台首页
+ 
+Route::resource('/admin/users','admin\users\usersController'); // 用户页
 
-Route::resource('/admin/users','admin\users\usersController');
+Route::resource('/admin/seller','admin\seller\sellerController'); // 商家页
 
-Route::resource('/admin/seller','admin\seller\sellerController');
-
-Route::get('/admin/users/center','admin\users\usersController@center');
+Route::get('/admin/users/center','admin\users\usersController@center'); // 个人中心
 
 // 商家
-Route::get('/seller','seller\indexController@index');
+Route::get('/seller','seller\indexController@index'); // 商家首页
 
-Route::resource('/seller/users','seller\users\usersController');
+Route::resource('/seller/users','seller\users\usersController'); // 会员页
 
-Route::resource('/seller/goods','seller\goods\goodsController');
+Route::resource('/seller/goods','seller\goods\goodsController'); // 商品页
 
-Route::get('/seller/order','seller\orders\orderController@index');
+Route::get('/seller/order','seller\orders\orderController@index'); // 订单页
 
-Route::get('/seller/orders/orderinfo','seller\orders\orderinfoController@index');
+Route::get('/seller/orders/orderinfo','seller\orders\orderinfoController@index'); // 订单详情页
