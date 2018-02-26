@@ -9,9 +9,16 @@
 </div>
 <!--login-->
 <div class="container">
+        @if (session('msg'))
+            <script>
+                alert("{{ session('msg') }}");
+            </script>
+        @endif      
         <div class="login">
-            <form>
+            <form action='{{ url("/doRegister") }}' method='post'>
+            {{ csrf_field() }}
                 <div class="col-md-3"></div>
+            
             <div class="col-md-6 login-do">
             <div class="login-mail">
                     <input type="text" placeholder="Name" name='name' required="" autofocus>

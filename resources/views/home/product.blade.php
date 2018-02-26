@@ -18,7 +18,7 @@
                     <div class="col-md-4 item-grid1 simpleCart_shelfItem">
                     <div class=" mid-pop">
                     <div class="pro-img">
-                        <img src='{{ asset("homes/images/{$v->goods_original}") }} ' class="img-responsive" alt="">
+                        <img src='{{ asset("homes/images/{$v->cargo_cover}") }} ' class="img-responsive" alt="">
                         <div class="zoom-icon ">
                         <a class="picture" href='{{ asset("homes/images/{$v->goods_original}") }} ' rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
                         <a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>

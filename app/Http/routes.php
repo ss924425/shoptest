@@ -18,10 +18,20 @@ Route::get('/detial','home\detialController@index');
 Route::get('/product','home\productController@index');
 Route::get('/cart','home\cartController@index');
 Route::get('/contact','home\contactController@index');
-Route::get('/register','home\registerController@index');
+
 
 // 后台
 Route::get('/admin', 'admin\indexController@index');
 
 // 商家
+Route::get('/seller', 'seller\sellerController@index');
 Route::resource('/goods', 'seller\goodsController');
+
+// 注册
+Route::get('/register','home\registerController@index');
+Route::post('/doRegister', 'home\registerController@doRegister');
+
+// 登录
+Route::get('/login','home\loginController@index');
+Route::post('/doLogin', 'home\loginController@doLogin');
+

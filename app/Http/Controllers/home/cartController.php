@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Models\cart;
 
 class cartController extends Controller
 {
@@ -16,7 +17,8 @@ class cartController extends Controller
      */
     public function index()
     {
-         return view('home.cart');
+        $res = cart::data_cargo()
+        return view('home.cart');
     }
 
     /**

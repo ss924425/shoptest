@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Goods extends Model
 {
     // 指定绑定的表明
-    public $table = 'data_goods';
+    public $table = 'data_cargo';
 
     public $timestamps = false;
 
-    public function list()
+    public function data_category()
     {
-    	return this->get();
+    	return $this->hasOne('App\Http\Model\data_category','id','category_id');
     }
 }

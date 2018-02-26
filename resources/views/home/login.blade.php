@@ -3,6 +3,11 @@
 
 <!--banner-->
 <div class="banner-top">
+@if (session('msg'))
+            <script>
+                alert("{{ session('msg') }}");
+            </script>
+        @endif
     <div class="container">
         <img src="{{ asset('homes/images/logo1.png') }}">
     </div>
@@ -11,7 +16,8 @@
 <div class="container">
         <div class="login">
             <div class="col-md-3"></div>
-            <form>
+            <form action="{{ url('/doLogin') }}" method='post'>
+            {{ csrf_field() }}
             <div class="col-md-6 login-do">
                 <div class="login-mail">
                     <input type="text" placeholder="请输入用户名" name='name' required="" autofocus>
@@ -25,7 +31,7 @@
                     <label class="hvr-skew-backward" style="width:64px;height:38px;">
                         <input type="submit" value="登录" >
                     </label>
-                    <a href="register.html" class=" hvr-skew-backward">注册</a>
+                    <a href="{{ url('register') }}" class=" hvr-skew-backward">注册</a>
             </div>
             </center>
             <div class="clearfix"> </div>

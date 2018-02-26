@@ -20,7 +20,7 @@ class goodsController extends Controller
     {
         // dd(1111);
         $list = DB::table('data_goods')->get();
-        return view('seller.index',['list' => $list]);
+        return view('seller.admin.index',['list' => $list]);
     }
 
     /**
