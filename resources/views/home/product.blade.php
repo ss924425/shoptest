@@ -21,14 +21,14 @@
                         <img src='{{ asset("homes/images/{$v->goods_original}") }} ' class="img-responsive" alt="">
                         <div class="zoom-icon ">
                         <a class="picture" href='{{ asset("homes/images/{$v->goods_original}") }} ' rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-                        <a href="single.html"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+                        <a href="{{url('detial')}}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
                         </div>
                         </div>
                         <div class="mid-1">
                         <div class="women">
                         <div class="women-top">
                             <span>Women</span>
-                            <h6><a href="single.html">Sed ut perspiciati</a></h6>
+                            <h6><a href="{{url('login')}}">{{$v->goods_title}}</a></h6>
                             </div>
                             <div class="img item_add">
                                 <a href="#"><img src="{{ asset('homes/images/ca.png') }} " alt=""></a>
@@ -36,7 +36,7 @@
                             <div class="clearfix"></div>
                             </div>
                             <div class="mid-2">
-                                <p ><label>$100.00</label><em class="item_price">$70.00</em></p>
+                                <p ><label>$100.00</label><em class="item_price">{{$v->goods_price}}</em></p>
                                   <div class="block">
                                     <div class="starbox small ghosting"> </div>
                                 </div>
