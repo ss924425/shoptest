@@ -420,13 +420,13 @@
 
 							<ul class="submenu">
 								<li>
-									<a href="{{url('seller/order')}}">
+									<a href="{{url('seller/users')}}">
 										<i class="icon-double-angle-right"></i>
 										会员列表
 									</a>
 								</li>
 								<li>
-									<a href="{{url('seller/order')}}">
+									<a href="{{url('seller/users/create')}}">
 										<i class="icon-double-angle-right"></i>
 										添加新会员
 									</a>
