@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Products</h1>
         <em></em>
-        <h2><a href="index.html">Home</a><label>/</label>Products</a></h2>
+        <h2><a href="{{url('/')}}">首页</a><label>/</label>Products</a></h2>
     </div>
 </div>
     <!--content-->
@@ -14,31 +14,28 @@
             <div class="container">
             <div class="col-md-9">
             <div class="mid-popular">
-            @foreach($res as $v)
-                    <div class="col-md-4 item-grid1 simpleCart_shelfItem">
+                @foreach($res as $v)
+                <div class="col-md-4 item-grid1 simpleCart_shelfItem"  style="width: 224px;height: 443px;">
                     <div class=" mid-pop">
                     <div class="pro-img">
-                        <img src='{{ asset("homes/images/{$v->goods_original}") }} ' class="img-responsive" alt="">
+                        <img src='{{asset("homes/images/{$v->goods_covel}") }}' class="img-responsive" alt="" style="width: 172px;height: 223px;">
                         <div class="zoom-icon ">
-                        <a class="picture" href='{{ asset("homes/images/{$v->goods_original}") }} ' rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
-                        <a href="{{url('detial')}}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
+                        <a class="picture" href="{{asset('homes/images/pc1.jpg')}}" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+                        <a href='{{url("/product/show/$v->id")}}'><i class="glyphicon glyphicon-menu-right icon"></i></a>
                         </div>
                         </div>
                         <div class="mid-1">
                         <div class="women">
-                        <div class="women-top">
-                            <span>Women</span>
-                            <h6><a href="{{url('login')}}">{{$v->goods_title}}</a></h6>
-                            </div>
-                            <div class="img item_add">
-                                <a href="#"><img src="{{ asset('homes/images/ca.png') }} " alt=""></a>
+                        <div class="women-top yincang">
+                            <span><a href='{{url("/product/show/$v->id")}}' class="text-overflow">{{$v->goods_title}}</a></span>
                             </div>
                             <div class="clearfix"></div>
                             </div>
                             <div class="mid-2">
-                                <p ><label>$100.00</label><em class="item_price">{{$v->goods_price}}</em></p>
+                                <p ><label>￥{{$v->goods_price + 47}}</label><em class="item_price" style="color: #000;"><b>￥{{$v->goods_price}}</b></em></p>
                                   <div class="block">
-                                    <div class="starbox small ghosting"> </div>
+                                    <a href="javascript:void(0)" onclick="alert('收藏成功')" class="btn btn-default btn-xs">☆501
+                                </a>
                                 </div>
                                 
                                 <div class="clearfix"></div>
@@ -46,8 +43,8 @@
                             
                         </div>
                     </div>
-                    </div>
-            @endforeach        
+                    </div>   
+                    @endforeach  
                     <div class="clearfix"></div>
                 </div>
             </div>

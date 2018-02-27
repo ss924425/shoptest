@@ -48,7 +48,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </script>
 
 <!---//End-rate---->
-
 </head>
 <body>
 
@@ -165,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>                          
                         </div>
                         <div class="col1 col5">
-                        <img src="images/me.png" class="img-responsive" alt="">
+                        <img src="{{asset('homes/images/me.png') }}" class="img-responsive" alt="">
                         </div>
                         <div class="clearfix"></div>
                     </div>                  
@@ -230,7 +229,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </div>                          
                         </div>
                         <div class="col1 col5">
-                        <img src="images/me1.png" class="img-responsive" alt="">
+                        <img src="{{asset('homes/images/me1.png') }}" class="img-responsive" alt="">
                         </div>
                         <div class="clearfix"></div>
                     </div>                  
