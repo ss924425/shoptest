@@ -15,8 +15,10 @@
 					alert("{{ session('mes') }}");
 				</script>
 			@endif
-			<form action="{{ url('seller/goods') }}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+			
+			<form action='{{ url("seller/goods/{$goods->id}") }}' method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
 			{{ csrf_field() }}
+			{{ method_field('PUT') }}
 				<div class="form-group ">
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品类别</label>
 
@@ -32,57 +34,57 @@
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品名称</label>
 
 					<div class="col-sm-6">
-						<input type="text" name="cargo_name" id="form-field-1" placeholder="请输入商品名称" class="col-xs-10 col-sm-5" />
+						<input type="text" name="cargo_name" id="form-field-1" placeholder="{{ $goods->cargo_name }}" class="col-xs-10 col-sm-5" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品价格</label>
 
 					<div class="col-sm-6">
-						<input type="text" name="cargo_price" id="form-field-1" placeholder="请输入商品价格" class="col-xs-10 col-sm-5" />
+						<input type="text" name="cargo_price" id="form-field-1" placeholder="{{ $goods->cargo_price }}" class="col-xs-10 col-sm-5" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品图片</label>
 					<div class="col-sm-9">
-				    <input type="file" name="cargo_original" >
+				    <input type="file" name="cargo_original" multiple>
 				    </div>				
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品简介</label>
 					<div class="col-sm-4">
-				    <textarea class="form-control" name="cargo_info" id="form-field-8" placeholder="请输入简介"></textarea>
+				    <textarea class="form-control" name="cargo_info" id="form-field-8" placeholder="{{ $goods->cargo_info }}"></textarea>
 				    </div>				
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品库存</label>
 					<div class="col-sm-4">
-				    <input type="text" name="inventory" class="input-mini" id="" />
+				    <input type="text" name="inventory" value="{{ $goods->inventory }}" class="input-mini" id="" />
 				    </div>				
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label no-padding-right" for="form-field-1">商品状态</label>
 					<div class="col-sm-9">
 						<label class="radio-inline">
-						  <input type="radio" name="cargo_status" id="inlineRadio1" value="1"> 
-						  上架
+						  <input type="radio" name="cargo_status" id="inlineRadio2" value="2" {{ $goods->cargo_status == 1?"checked":'' }}> 上架
 						</label>
 						<label class="radio-inline">
-						  <input type="radio" name="cargo_status" id="inlineRadio2" value="2"> 下架
+						  <input type="radio" name="cargo_status" id="inlineRadio2" value="2" {{ $goods->cargo_status == 2?"checked":'' }}> 待售
 						</label>
 						<label class="radio-inline">
-						  <input type="radio" name="cargo_status" id="inlineRadio2" value="3"> 入库
+						  <input type="radio" name="cargo_status" id="inlineRadio2" value="2" {{ $goods->cargo_status == 3?"checked":'' }}> 下架
 						</label>
 
 					</div>
 				</div>
 				<div class="form-group">
 					<center>
-					<input type="submit" class="btn btn-info" value="添加">
+					<input type="submit" class="btn btn-info" value="修改">
 					<input type="reset" class="btn btn-default" value="取消">
 					</center>
 				</div>
 			</form>
+			
 					</div>
 				</div>
 			</div><!-- PAGE CONTENT ENDS -->

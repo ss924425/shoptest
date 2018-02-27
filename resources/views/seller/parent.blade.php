@@ -386,7 +386,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="{{url('seller/goods')}}">
+									<a href="#">
 										<i class="icon-double-angle-right"></i>
 										添加商品分类
 									</a>
