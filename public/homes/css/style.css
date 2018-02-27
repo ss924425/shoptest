@@ -588,7 +588,7 @@ a.buy-now:hover{
 	width: 100%;
     height: 250px;
     display: block;
-    background: url(../images/back.jpg)no-repeat ;
+    background: url(../images/bg2.png)no-repeat ;
 	padding:5em 0;
 	background-size:cover;
 }
@@ -765,9 +765,7 @@ ul.kid-menu li,ul.cute li{
 .item-grid1 {
     padding-bottom: 2em;
 }
-.item-grid1:nth-child(7) ,.item-grid1:nth-child(8),.item-grid1:nth-child(9){
-    padding-bottom: 0em;
-}
+
 /*--single--*/
 .span_2_of_a1 h3 {
 	color: #000;

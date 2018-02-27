@@ -18,6 +18,8 @@ Route::get('/login','home\loginController@index'); // 登录页
 
 Route::get('/detial','home\detialController@index'); // 商品详情页
 
+Route::get('/product/show/{id}','home\productController@show'); // 商品详情页
+
 Route::get('/product','home\productController@index'); // 商品列表页
 
 Route::get('/cart','home\cartController@index'); // 购物车页
@@ -25,6 +27,10 @@ Route::get('/cart','home\cartController@index'); // 购物车页
 Route::get('/contact','home\contactController@index'); // 商家入驻页
 
 Route::get('/register','home\registerController@index'); // 注册页
+
+Route::post('/register/send','home\registerController@send'); // 注册页
+
+Route::post('/register/doRegister','home\registerController@doRegister'); // 注册页
 
 Route::get('/center','home\centerController@index'); // 个人中心页
 
