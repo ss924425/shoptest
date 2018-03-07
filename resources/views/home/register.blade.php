@@ -10,13 +10,27 @@
 <!--login-->
 <div class="container">
         <div class="login">
+<!--             @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif -->
+            @if(session('msg'))
+                <script>
+                    alert('{{ session("msg") }}')
+                </script>
+            @endif
             <form action='{{ url("/register/doRegister") }}' method='post'>
                 {{ csrf_field() }}
                 <div class="col-md-3"></div>
                 
             <div class="col-md-6 login-do">
             <div class="login-mail">
-                    <input type="text" placeholder="请输入用户名" required="" autofocus>
+                    <input type="text" name="name" placeholder="请输入用户名" required="" autofocus>
                     <i  class="glyphicon glyphicon-user"></i>
                 </div>
                 <div class="login-mail">
@@ -29,26 +43,26 @@
                 <div style="width: 200px;">
                     
                 <div class="login-mail">
-                    <input type="text" placeholder="请输入验证码" required="">
+                    <input type="text" name="code" placeholder="请输入验证码" required="">
                 </div>
                 </div>
                 <div class="login-mail">
-                    <input type="text" name="email" placeholder="Email" required="">
+                    <input type="text" name="email" placeholder="邮箱" required="">
                     <i  class="glyphicon glyphicon-envelope"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="password" name='password' placeholder="Password" required="">
+                    <input type="password" name='password' placeholder="输入密码" required="">
                     <i class="glyphicon glyphicon-lock"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="password" name='repass' placeholder="Password" required="">
+                    <input type="password" name='repass' placeholder="确认密码" required="">
                     <i class="glyphicon glyphicon-lock"></i>
                 </div>
                    <center>
                     <label class="hvr-skew-backward" style="width:64px;height:38px;">
                         <input type="submit" value="注册" >
                     </label>
-                    <a href="{{url('login')}}" class=" hvr-skew-backward">登录</a>
+                    <a href="{{ url('register') }}" class=" hvr-skew-backward">重置</a>
             </div>
             </center>
             
@@ -88,8 +102,8 @@
         function sendCode()
         {
             var tel = $('[name="tel"]').val();
-            $.post('{{ url("/register/send") }}',{'_token':'{{ csrf_token() }}','tel':tel},function(data){
-                alert(data);
+            $.post('{{ url("register/send") }}',{'_token':'{{ csrf_token() }}','tel':tel},function(data){
+                alert('验证码已发送');
             })
         }
     </script> 

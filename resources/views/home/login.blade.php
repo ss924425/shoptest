@@ -11,19 +11,25 @@
 <div class="container">
         <div class="login">
             <div class="col-md-3"></div>
-            <form>
+            @if (session('msg'))
+                <script>
+                    alert("{{ session('msg') }}");
+                </script>       
+            @endif
+            <form action="{{ url('login/dologin') }}" method="post">
+            {{ csrf_field() }}
             <div class="col-md-6 login-do">
                 <div class="login-mail">
-                    <input type="text" placeholder="请输入用户名" required="" autofocus>
+                    <input type="text" name="name" placeholder="请输入用户名" required="" autofocus>
                     <i  class="glyphicon glyphicon-envelope"></i>
                 </div>
                 <div class="login-mail">
-                    <input type="password" placeholder="请输入密码" required="">
+                    <input type="password" name="password" placeholder="请输入密码" required="">
                     <i class="glyphicon glyphicon-lock"></i>
                 </div>
                 <center>
                     <label class="hvr-skew-backward" style="width:64px;height:38px;">
-                        <input type="submit">
+                        <input type="submit" value="登录">
                     </label>
                     <a href="{{url('register')}}" class=" hvr-skew-backward">注册</a>
             </div>

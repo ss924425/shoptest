@@ -81,7 +81,7 @@
                     <div class="col-md-3 item-grid simpleCart_shelfItem">
                     <div class=" mid-pop">
                     <div class="pro-img">
-                        <img src='{{ asset("homes/images/{$v->goods_original}") }} ' class="img-responsive" alt="">
+                        <img src='{{ asset("homes/images/{$v->goods_covel}") }}' class="img-responsive" alt="">
                         <div class="zoom-icon ">
                         <a class="picture" href='{{ asset("homes/images/{$v->goods_original}") }} ' rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
                         <a href="{{url('detial')}}"><i class="glyphicon glyphicon-menu-right icon"></i></a>
@@ -96,7 +96,7 @@
                             <div class="img item_add">
                                 <a href="#"><img src="{{ asset('homes/images/ca.png') }}" alt=""></a>
                             </div>
-                            <div class="clearfix"></div>
+                            
                             </div>
                             <div class="mid-2">
                                 <p ><label>$100.00</label><em class="item_price">$70.00</em></p>
@@ -104,7 +104,7 @@
                                     <div class="starbox small ghosting"> </div>
                                 </div>
                                 
-                                <div class="clearfix"></div>
+                                
                             </div>
                             
                         </div>
@@ -128,7 +128,7 @@
                 <div class="col-md-3 brand-grid">
                     <img src="{{ asset('homes/images/ic3.png') }}" class="img-responsive" alt="">
                 </div>
-                <div class="clearfix"></div>
+                
             </div>
             <!--//brand-->
             </div>

@@ -11,6 +11,7 @@ use Flc\Dysms\Request\SendSms;
 use DB;
 use session;
 
+
 class registerController extends Controller
 {
     /**
@@ -25,45 +26,45 @@ class registerController extends Controller
 
     public function send(Request $request)
     {
-        // $tel = $request->input('tel');
-        // $config = [
-        //     'accessKeyId'    => 'LTAILN0uJbGAAy46',
-        //     'accessKeySecret' => 'UsRTBFHMIoOHptoTLyFDGG8YC7U936',
-        // ];
-        // $code = rand(100000, 999999);
-        // $client  = new Client($config);
-        // $sendSms = new SendSms;
-        // $sendSms->setPhoneNumbers($tel);
-        // $sendSms->setSignName('爱客shop');
-        // $sendSms->setTemplateCode('SMS_125029950');
-        // $sendSms->setTemplateParam(['code' => $code]);
-        // $sendSms->setOutId('demo');
+        $tel = $request->input('tel');
+        $config = [
+            'accessKeyId'    => 'LTAILHpSqkecD8zT',
+            'accessKeySecret' => 'bJh4X2XhpkDI1TG9wlfW7rPkLXNu0g',
+        ];
+        $code = rand(1,999999);
+        $client  = new Client($config);
+        $sendSms = new SendSms;
+        $sendSms->setPhoneNumbers($tel);
+        $sendSms->setSignName('爱客商城');
+        $sendSms->setTemplateCode('SMS_126350783');
+        $sendSms->setTemplateParam(['code' =>$code]);
+        $sendSms->setOutId('demo');
 
-        // print_r($client->execute($sendSms));
-        // session(['code'=>$code]);
+        print_r($client->execute($sendSms));
+        session(['code'=> $code]);
     }
 
     public function doRegister(Request $request)
     {
-        // $code = $request->input('code');
-        // if($code != session('code')){
-        //     return back()->with('msg', '验证码错误');
-        // }
+        $code = $request->input('code');
+        if($code != session('code')){
+            return back()->with('msg', '验证码错误');
+        }
 
         
         $arr = $request->except('_token');
-        // dd($arr);
-        // $messages = [
-        //     'required' => ':attribute 是必须填写的',
-        //     'max'      => ':attribute 必须小于12个字符',
-        //     'min'      => ':attribute 必须大于8个字符'
-        // ];
+
+        $messages = [
+            'required' => ':attribute 是必须填写的',
+            'max'      => ':attribute 必须小于12个字符',
+            'min'      => ':attribute 必须大于3个字符'
+        ];
 
 
-        // $this->validate($request, [
-        //     'name' => 'required|max:12|min:3',
-        //     'password' => 'required',
-        // ], $messages);
+        $this->validate($request, [
+            'name' => 'required|max:12|min:3',
+            'password' => 'required',
+        ], $messages);
 
 
         if($arr['password'] != $arr['repass']){
@@ -73,7 +74,8 @@ class registerController extends Controller
 
         unset($arr['repass']);
         unset($arr['code']);
-        // dd($arr);
+
+        
         $res = DB::table('data_users_register')->insertGetId($arr);
 
 

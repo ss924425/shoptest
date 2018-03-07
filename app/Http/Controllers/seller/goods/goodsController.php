@@ -41,6 +41,7 @@ class goodsController extends Controller
     public function store(Request $request)
     {
         $arr = $request->except('_token');
+        unset($arr['file']);
         $res = DB::table('data_cargo')->insertGetId($arr);
         $messages = [
             'required' => ':attribute 是必须填写的'

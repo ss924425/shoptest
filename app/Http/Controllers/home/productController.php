@@ -54,11 +54,6 @@ class productController extends Controller
     public function show($id)
     {
         $res2 = DB::table('data_goods')->where('id', $id)->get();
-        foreach($res2 as $k=>$v){
-            // $goods_original = $res2['goods_original'];
-            echo '<pre>';
-            var_dump($res2);
-            }
         return view('home.detial',['res2'=>$res2]);
     }
 

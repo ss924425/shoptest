@@ -16,6 +16,8 @@ Route::get('/','home\indexController@index'); // 首页
 
 Route::get('/login','home\loginController@index'); // 登录页
 
+Route::post('/login/dologin','home\loginController@dologin'); //登录页
+
 Route::get('/detial','home\detialController@index'); // 商品详情页
 
 Route::get('/product/show/{id}','home\productController@show'); // 商品详情页
@@ -55,3 +57,5 @@ Route::resource('/seller/goods','seller\goods\goodsController'); // 商品页
 Route::get('/seller/order','seller\orders\orderController@index'); // 订单页
 
 Route::get('/seller/orders/orderinfo','seller\orders\orderinfoController@index'); // 订单详情页
+
+Route::post('seller/goods/pic','seller\goods\picController@pic');
